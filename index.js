@@ -53,7 +53,7 @@ function run() {
                 ms = core.getInput('milliseconds');
                 core.debug("Waiting " + ms + " milliseconds ...");
                 context = github.context;
-                core.debug(context.sha);
+                core.info(context.sha);
             }
             catch (error) {
                 core.setFailed(error.message);
