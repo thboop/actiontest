@@ -50,12 +50,12 @@ function run() {
         return __generator(this, function (_a) {
             try {
                 if (process.platform === 'win32') {
-                    tc.extractZip("test", "test1");
-                    tc.extract7z("test", "test2");
+                    tc.extractZip("./test", "test1");
+                    tc.extract7z("./test", "test2");
                 }
                 else {
-                    tc.extractZip("test", "test1");
-                    tc.extractTar("test", "test3");
+                    tc.extractZip("./test", "test1");
+                    tc.extractTar("./test", "test3");
                 }
             }
             catch (error) {
