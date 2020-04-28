@@ -47,44 +47,38 @@ var core = __importStar(require("@actions/core"));
 var tc = __importStar(require("@actions/tool-cache"));
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var node12Path, node12Path1, node12Path, node12Path1, error_1;
+        var node12Path1, node12Path, node12Path1, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 11, , 12]);
-                    if (!(process.platform === 'win32')) return [3 /*break*/, 5];
-                    return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.zip')];
-                case 1:
-                    node12Path = _a.sent();
-                    return [4 /*yield*/, tc.extractZip(node12Path, 'test1')];
-                case 2:
-                    _a.sent();
+                    _a.trys.push([0, 9, , 10]);
+                    if (!(process.platform === 'win32')) return [3 /*break*/, 3];
                     return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.7z')];
-                case 3:
+                case 1:
                     node12Path1 = _a.sent();
                     return [4 /*yield*/, tc.extract7z(node12Path1, 'test2')];
-                case 4:
+                case 2:
                     _a.sent();
-                    return [3 /*break*/, 10];
-                case 5: return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-linux-x64.tar.gz')];
-                case 6:
+                    return [3 /*break*/, 8];
+                case 3: return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-linux-x64.tar.gz')];
+                case 4:
                     node12Path = _a.sent();
                     return [4 /*yield*/, tc.extractTar(node12Path, 'test1')];
-                case 7:
+                case 5:
                     _a.sent();
                     return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.zip')];
-                case 8:
+                case 6:
                     node12Path1 = _a.sent();
                     return [4 /*yield*/, tc.extractZip(node12Path1, 'test2')];
-                case 9:
+                case 7:
                     _a.sent();
-                    _a.label = 10;
-                case 10: return [3 /*break*/, 12];
-                case 11:
+                    _a.label = 8;
+                case 8: return [3 /*break*/, 10];
+                case 9:
                     error_1 = _a.sent();
                     core.setFailed(error_1.message);
-                    return [3 /*break*/, 12];
-                case 12: return [2 /*return*/];
+                    return [3 /*break*/, 10];
+                case 10: return [2 /*return*/];
             }
         });
     });
