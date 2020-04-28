@@ -55,7 +55,7 @@ function run() {
                 }
                 else {
                     tc.extractZip("./test.zip", "test1");
-                    tc.extractTar("./test", "test2");
+                    tc.extractTar("./test.tar.gz", "test2");
                 }
             }
             catch (error) {
