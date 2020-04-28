@@ -8,8 +8,10 @@ async function run() {
       tc.extract7z("./test", "test2")
     }
     else {
-      tc.extractZip("./test.zip", "test1")
-      tc.extractTar("./test.tar.gz", "test2")
+      const node12Path = await tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-linux-x64.tar.gz');
+      await tc.extractTar(node12Path, 'test1');
+      const node12Path1 = await tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.zip');
+      await tc.extractZip(node12Path1, 'test2');
     }
   } catch (error) {
     core.setFailed(error.message)

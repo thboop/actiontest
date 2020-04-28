@@ -47,21 +47,35 @@ var core = __importStar(require("@actions/core"));
 var tc = __importStar(require("@actions/tool-cache"));
 function run() {
     return __awaiter(this, void 0, void 0, function () {
+        var node12Path, node12Path1, error_1;
         return __generator(this, function (_a) {
-            try {
-                if (process.platform === 'win32') {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 7, , 8]);
+                    if (!(process.platform === 'win32')) return [3 /*break*/, 1];
                     tc.extractZip("./test.zip", "test1");
                     tc.extract7z("./test", "test2");
-                }
-                else {
-                    tc.extractZip("./test.zip", "test1");
-                    tc.extractTar("./test.tar.gz", "test2");
-                }
+                    return [3 /*break*/, 6];
+                case 1: return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-linux-x64.tar.gz')];
+                case 2:
+                    node12Path = _a.sent();
+                    return [4 /*yield*/, tc.extractTar(node12Path, 'test1')];
+                case 3:
+                    _a.sent();
+                    return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.zip')];
+                case 4:
+                    node12Path1 = _a.sent();
+                    return [4 /*yield*/, tc.extractZip(node12Path1, 'test2')];
+                case 5:
+                    _a.sent();
+                    _a.label = 6;
+                case 6: return [3 /*break*/, 8];
+                case 7:
+                    error_1 = _a.sent();
+                    core.setFailed(error_1.message);
+                    return [3 /*break*/, 8];
+                case 8: return [2 /*return*/];
             }
-            catch (error) {
-                core.setFailed(error.message);
-            }
-            return [2 /*return*/];
         });
     });
 }
