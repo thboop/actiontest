@@ -44,16 +44,20 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core = __importStar(require("@actions/core"));
-var github = __importStar(require("@actions/github"));
+var tc = __importStar(require("@actions/tool-cache"));
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var ms, context;
         return __generator(this, function (_a) {
             try {
-                ms = core.getInput('milliseconds');
-                core.debug("Waiting " + ms + " milliseconds ...");
-                context = github.context;
-                core.info(context.sha);
+                if (process.platform === 'win32') {
+                    tc.extractZip("1.zip", "test1");
+                    tc.extract7z("1.7z", "test2");
+                }
+                else {
+                    tc.extractZip("1.zip", "test1");
+                    tc.extract7z("1.7z", "test2");
+                    tc.extractTar("1.tar", "test3");
+                }
             }
             catch (error) {
                 core.setFailed(error.message);
