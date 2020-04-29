@@ -54,9 +54,9 @@ function run() {
                     _a.trys.push([0, 8, , 9]);
                     if (!(process.platform === 'win32')) return [3 /*break*/, 2];
                     //const node12Path1 = await tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.7z');
+                    console.log("test");
                     return [4 /*yield*/, tc.extract7z('D:\\a\\thboop-test2\\thboop-test2\\test.7z', 'D:\\a\\thboop-test2\\thboop-test2\\test1')];
                 case 1:
-                    //const node12Path1 = await tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.7z');
                     _a.sent();
                     return [3 /*break*/, 7];
                 case 2: return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-linux-x64.tar.gz')];
