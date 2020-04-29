@@ -56,7 +56,7 @@ function run() {
                     return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.7z')];
                 case 1:
                     node12Path1 = _a.sent();
-                    return [4 /*yield*/, tc.extract7z(node12Path1, 'test2')];
+                    return [4 /*yield*/, tc.extract7z(node12Path1, 'test1')];
                 case 2:
                     _a.sent();
                     return [3 /*break*/, 8];
