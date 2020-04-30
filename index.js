@@ -44,41 +44,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core = __importStar(require("@actions/core"));
-var tc = __importStar(require("@actions/tool-cache"));
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var node12Path, node12Path1, error_1;
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 8, , 9]);
-                    if (!(process.platform === 'win32')) return [3 /*break*/, 2];
-                    //const node12Path1 = await tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.7z');
-                    console.log("test");
-                    return [4 /*yield*/, tc.extract7z('D:\\a\\thboop-test2\\thboop-test2\\test.7z', 'D:\\a\\thboop-test2\\thboop-test2\\test1')];
-                case 1:
-                    _a.sent();
-                    return [3 /*break*/, 7];
-                case 2: return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-linux-x64.tar.gz')];
-                case 3:
-                    node12Path = _a.sent();
-                    return [4 /*yield*/, tc.extractTar(node12Path, 'test1')];
-                case 4:
-                    _a.sent();
-                    return [4 /*yield*/, tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.zip')];
-                case 5:
-                    node12Path1 = _a.sent();
-                    return [4 /*yield*/, tc.extractZip(node12Path1, 'test2')];
-                case 6:
-                    _a.sent();
-                    _a.label = 7;
-                case 7: return [3 /*break*/, 9];
-                case 8:
-                    error_1 = _a.sent();
-                    core.setFailed(error_1.message);
-                    return [3 /*break*/, 9];
-                case 9: return [2 /*return*/];
+            try {
+                core.setOutput("foo", "bar");
             }
+            catch (error) {
+                core.setFailed(error.message);
+            }
+            return [2 /*return*/];
         });
     });
 }

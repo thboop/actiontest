@@ -1,19 +1,8 @@
 import * as core from '@actions/core';
-import * as tc from '@actions/tool-cache';
 
 async function run() {
   try {
-    if (process.platform === 'win32'){
-      //const node12Path1 = await tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.7z');
-      console.log("test");
-      await tc.extract7z('D:\\a\\thboop-test2\\thboop-test2\\test.7z', 'D:\\a\\thboop-test2\\thboop-test2\\test1');
-    }
-    else {
-      const node12Path = await tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-linux-x64.tar.gz');
-      await tc.extractTar(node12Path, 'test1');
-      const node12Path1 = await tc.downloadTool('https://nodejs.org/dist/v12.7.0/node-v12.7.0-win-x64.zip');
-      await tc.extractZip(node12Path1, 'test2');
-    }
+    core.setOutput("foo", "bar")
   } catch (error) {
     core.setFailed(error.message)
   }
